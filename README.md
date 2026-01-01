@@ -12,7 +12,7 @@ An interactive 2026 calendar web project built with HTML, CSS, and JavaScript. I
 
 ## Demo
 
-Check it live here: [GitHub Pages Link](https://Tharun-XD.github.io/Calendar_2026/)
+Check it live here: [Event Calendar 2026](https://Tharun-XD.github.io/Calendar_2026/)
 
 ## Project Structure
 
