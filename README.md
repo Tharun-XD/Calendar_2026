@@ -1,196 +1,71 @@
-# Events Calendar 2026 – Project Prompt
+# 2026 Interactive Calendar
 
-I want to build a **live, interactive web-based Events Calendar for the year 2026** using **HTML, CSS, and JavaScript** (no heavy frameworks). The calendar should display **India-specific events, worldwide events, and dates that contain both**, with clear visual differentiation and a clean, modern user experience.
+An interactive 2026 calendar web project built with HTML, CSS, and JavaScript. It displays all dates of the year, supports navigation via arrows, and dynamically shows holidays/events from a JSON file.
 
----
+## Features
 
-## Project Goal
+* Full 2026 calendar display
+* Large, readable date numbers
+* Arrow navigation for months
+* Optional swipe support for mobile
+* Dynamic events loaded from `holidays_2026.json`
 
-Create a **single-page calendar web application** that:
+## Demo
 
-* Displays events for **each date in 2026**
-* Allows users to **navigate months easily**
-* Shows **event details in a popup/modal** when a date is clicked
-* Differentiates **India events**, **World events**, and **Mixed events**
-* Is **mobile-friendly**, swipe-enabled, and accessible
-* Uses a **pre-prepared JSON dataset** as the source of truth
+Check it live here: [Event Calendar 2026](https://Tharun-XD.github.io/Calendar_2026/)
 
----
+## Project Structure
 
-## Data Source & Structure
-
-### 1️ Events Data (JSON)
-
-The calendar data is stored in a `.json` file with the following structure:
-
-```json
-{
-  "jan": [
-    {
-      "date": 1,
-      "events": [
-        {
-          "title": "New Year's Day",
-          "description": "One paragraph description (4–6 sentences).",
-          "category": "Worldwide"
-        }
-      ]
-    }
-  ],
-  "feb": [...],
-  "mar": [...],
-  ...
-  "dec": [...]
-}
+```
+calendar_2026/
+├─ index.html       # Main calendar page
+├─ style.css        # CSS styling
+├─ script.js        # JavaScript for navigation and interaction
+├─ holidays_2026.json    # Holiday/event data
+└─ README.md        # This file
 ```
 
-### Key Notes:
+## Screenshots
 
-* Each month key (`jan` to `dec`) contains an array of date objects
-* Each date object contains:
+### Page Desciption and Month Navigation View
+![Full Year View](Screenshots/Screenshot_1.png)
 
-  * `date` → numeric day of the month
-  * `events` → array of event objects
-* Each event has:
+### Calendar View
+![Month Navigation](Screenshots/Screenshot_2.png)
 
-  * `title`
-  * `description` (already populated)
-  * `category` → `"India"` or `"Worldwide"`
-* Some dates may contain **multiple events**
-* Some dates may contain **both India and Worldwide events**
+### Event Description View
+![Mobile View](Screenshots/Screenshot_3.png)
 
----
 
-## Page Layout Structure
+## Data Collection
 
-The page should be structured in the following order:
+* The `holidays_2026.json` file contains events/holidays for the year 2026.
+* Each event includes the following fields: `date`, `title`, and optional `description`.
+* Data was last collected/updated on **December 30, 2025**.
+* Events were curated manually for demonstration purposes and are loaded dynamically by the calendar.
 
-### 1️ Header / Title Section
+## Usage
 
-* Page title: **“Events Calendar 2026”**
-* Optional short subtitle or intro text
+1. Clone the repository:
 
-### 2️ Description Section
+   ```bash
+   git clone https://github.com/Tharun-XD/Calendar_2026.git
+   ```
+2. Open `index.html` in a browser to view the calendar.
+3. To add or modify holidays/events, edit `holidays_2026.json` and reload the page.
 
-* Brief explanation of what the calendar is and how to use it
+## Technologies Used
 
-### 3️ Controls Section
+* HTML
+* CSS
+* JavaScript
+* JSON (for holidays/events)
 
-* **Month selector**
+## Notes
 
-  * Buttons or dropdown for months
-* **Region filter**
+* Works on modern browsers.
+* Fully responsive on mobile devices with optional swipe support.
 
-  * Options:
+## License
 
-    * India
-    * Worldwide
-    * Both
-  * Filtering should affect event visibility and/or color indicators
-
-### 4️ Calendar Section
-
-* Monthly **calendar table**
-* Only **one month visible at a time**
-* The calendar should:
-
-  * Open to the **current month by default**
-  * Highlight the **current date**
-  * Be navigable via:
-
-    * Left/right arrow buttons
-    * Swipe gestures (mobile)
-    * Month selector buttons
-* Dates with events should be visually highlighted
-
-### 5️ Footer
-
-* Simple footer (credits / year / purpose)
-
----
-
-## Visual Rules & Color Logic
-
-* Date boxes should be color-coded:
-
-  * **India events** → Color A
-  * **Worldwide events** → Color B
-  * **Both India + Worldwide** → Color C
-* Colors should be defined as **CSS variables in `:root`**
-* If region filtering is active, color indicators may be hidden or adjusted
-
----
-
-## Navigation & Interaction Behavior
-
-### Month Navigation
-
-Users can navigate months using:
-
-* Arrow buttons (left/right)
-* Swipe gestures (touch devices)
-* Month selector buttons
-
-All navigation methods should update the same internal state.
-
----
-
-### Event Interaction
-
-* Clicking on a date with events opens a **modal/popup**
-* The popup should display:
-
-  * Date
-  * Event title(s)
-  * Description(s)
-  * Category (India / Worldwide)
-* If multiple events exist on the same date, show all in the popup
-
----
-
-## Mobile & Accessibility Requirements
-
-* Fully responsive design
-* Swipe gestures supported on touch devices
-* Keyboard navigation support
-* Accessible buttons and labels (`aria` where appropriate)
-
----
-
-## Technical Constraints
-
-* Use **vanilla HTML, CSS, and JavaScript**
-* No backend required (static site)
-* JSON file loaded locally
-* Modular, readable, and maintainable code
-* Designed so features can be added later (search, year switch, etc.)
-
----
-
-## Security Considerations
-
-* No user input stored
-* No authentication
-* Data is read-only
-* Safe to deploy as a static site
-
----
-
-## Future Enhancements (Optional)
-
-* Year selector
-* Event search
-* Print/export calendar
-* Dark mode
-* PWA support
-
----
-
-## Expected Outcome
-
-A clean, responsive, interactive **Events Calendar 2026** that:
-
-* Is intuitive to use
-* Works well on desktop and mobile
-* Clearly distinguishes event types
-* Displays rich event descriptions on interaction
+This project is open for personal and educational use.
