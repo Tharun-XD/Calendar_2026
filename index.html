@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Calendar 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Events Calendar 2026</h1>
+            <p class="subtitle">Explore India and Worldwide Events Throughout the Year</p>
+        </header>
+
+        <section class="description">
+            <p>This interactive calendar presents notable dates and key events from India and across the world. Each highlighted date offers a concise overview of the associated events for easy reference. Use the available filters to personalize your view and navigate through the months effortlessly.</p>
+            <p><em>
+                (This calendar is intended for informational purposes only. Event details are provided as general references and may be subject to change.)
+            </em></p>
+        </section>
+
+        <section class="controls">
+            <div class="control-group">
+                <label>Select Month</label>
+                <div class="month-selector" id="monthSelector"></div>
+            </div>
+
+            <div class="control-group">
+                <label>Filter by Region</label>
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="both">
+                        <span class="color-indicator" style="background: linear-gradient(to right, var(--color-india), var(--color-worldwide));"></span>
+                        Both
+                    </button>
+                    <button class="filter-btn" data-filter="india">
+                        <span class="color-indicator" style="background: var(--color-india);"></span>
+                        India
+                    </button>
+                    <button class="filter-btn" data-filter="worldwide">
+                        <span class="color-indicator" style="background: var(--color-worldwide);"></span>
+                        Worldwide
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="calendar-section" id="calendarSection">
+            <div class="calendar-header">
+                <h2 class="calendar-title" id="calendarTitle">January 2026</h2>
+                <div class="nav-arrows">
+                    <button class="arrow-btn" id="prevMonth" aria-label="Previous month">‹</button>
+                    <button class="arrow-btn" id="nextMonth" aria-label="Next month">›</button>
+                </div>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Events Calendar | Showcasing India and Worldwide Events</p>
+            <p>Dates last updated: 30 December 2025</p>
+            <em>
+                Event dates sourced from
+                <a href="https://www.un.org/en/observances/international-days-and-weeks" target="_blank" rel="noopener noreferrer">International Days and Weeks - United Nations</a> |
+                <a href="https://www.calendarr.com/india/observances-2026/" target="_blank" rel="noopener noreferrer">National Days 2026 - Calendarr</a>
+            </em>
+        </footer>
+    </div>
+
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
